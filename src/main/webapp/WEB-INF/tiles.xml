@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">  
+<tiles-definitions>  
+    <definition name="base.definition"  
+        template="/jsp/layout.jsp">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="header" value="/jsp/header.jsp" />  
+        <put-attribute name="category" value="/jsp/category.jsp" />  
+        <put-attribute name="body" value="" />  
+        <put-attribute name="footer" value="/jsp/footer.jsp" />  
+    </definition>  
+    <definition name="display" extends="base.definition">  
+        <put-attribute name="title" value="Display post" />  
+        <put-attribute name="body" value="/jsp/display.jsp" />  
+    </definition>  
+  
+    <!--  <definition name="hello" extends="base.definition">  
+        <put-attribute name="title" value="Hello Spring MVC" />  
+        <put-attribute name="body" value="/jsp/hello.jsp" />  
+    </definition>  -->
+  
+</tiles-definitions>  
