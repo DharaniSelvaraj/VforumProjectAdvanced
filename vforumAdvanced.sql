@@ -24,10 +24,10 @@ DROP TABLE IF EXISTS `answers`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `answers` (
   `answerId` int(11) NOT NULL AUTO_INCREMENT,
-  `answerDescription` varchar(2000) DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `employeeId` int(11) DEFAULT NULL,
-  `questionId` int(11) DEFAULT NULL,
+  `answerDescription` varchar(2000) DEFAULT NOT NULL,
+  `date` date DEFAULT NOT NULL,
+  `employeeId` int(11) DEFAULT NOT NULL,
+  `questionId` int(11) DEFAULT NOT NULL,
   PRIMARY KEY (`answerId`),
   KEY `employeeId` (`employeeId`),
   KEY `questionId` (`questionId`),
@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS `category`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `category` (
   `categoryId` int(11) NOT NULL,
-  `categoryName` varchar(20) DEFAULT NULL,
+  `categoryName` varchar(20) DEFAULT  NOT NULL,
   PRIMARY KEY (`categoryId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -79,11 +79,11 @@ DROP TABLE IF EXISTS `employee`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `employee` (
   `employeeId` int(11) NOT NULL,
-  `employeeName` varchar(30) DEFAULT NULL,
-  `employeeDesignation` varchar(30) DEFAULT NULL,
-  `employeeLocation` varchar(20) DEFAULT NULL,
-  `username` varchar(20) DEFAULT NULL,
-  `password` varchar(20) DEFAULT NULL,
+  `employeeName` varchar(30) DEFAULT  NOT NULL,
+  `employeeDesignation` varchar(30) DEFAULT  NOT NULL,
+  `employeeLocation` varchar(20) DEFAULT  NOT NULL,
+  `username` varchar(20) DEFAULT  NOT NULL,
+  `password` varchar(20) DEFAULT  NOT NULL,
   PRIMARY KEY (`employeeId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -107,10 +107,10 @@ DROP TABLE IF EXISTS `questions`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `questions` (
   `questionId` int(11) NOT NULL AUTO_INCREMENT,
-  `questionDescription` varchar(2000) DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `employeeId` int(11) DEFAULT NULL,
-  `categoryId` int(11) DEFAULT NULL,
+  `questionDescription` varchar(2000) DEFAULT  NOT NULL,
+  `date` date DEFAULT  NOT NULL,
+  `employeeId` int(11) DEFAULT  NOT NULL,
+  `categoryId` int(11) DEFAULT  NOT NULL,
   PRIMARY KEY (`questionId`),
   KEY `employeeId` (`employeeId`),
   KEY `categoryId` (`categoryId`),
@@ -125,7 +125,7 @@ CREATE TABLE `questions` (
 
 LOCK TABLES `questions` WRITE;
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
-INSERT INTO `questions` VALUES (1,'what is spring?','2019-10-11',1,1),(2,'what isspringboot','2019-10-11',2,NULL);
+INSERT INTO `questions` VALUES (1,'what is spring?','2019-10-11',1,1),(2,'what isspringboot','2019-10-11',2, 2);
 /*!40000 ALTER TABLE `questions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
